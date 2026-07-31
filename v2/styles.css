@@ -705,12 +705,88 @@
     color: rgba(255, 255, 255, 0.58);
     margin-top: var(--space-2);
   }
+
+  /* =========================================
+   FOOTER
+========================================= */
+
+.site-footer {
+    border-top: 1px solid var(--color-border);
+    padding: var(--space-6) 0;
+  }
   
+  .footer-content {
+    align-items: start;
+    display: grid;
+    gap: var(--space-5);
+    grid-template-columns: 1.2fr 0.8fr 1fr;
+  }
+  
+  .footer-brand h3 {
+    font-size: 0.9rem;
+    font-weight: 800;
+    letter-spacing: 0.3em;
+  }
+  
+  .footer-brand p {
+    color: var(--color-text-secondary);
+    font-size: var(--font-size-sm);
+    margin-top: var(--space-2);
+    max-width: 280px;
+  }
+  
+  .footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .footer-links a {
+    color: var(--color-text-secondary);
+    font-size: var(--font-size-sm);
+    transition: color var(--transition-fast);
+  }
+  
+  .footer-links a:hover {
+    color: var(--color-purple);
+  }
+  
+  .footer-contact {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    justify-self: end;
+  }
+  
+  .footer-contact > a {
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    transition: color var(--transition-fast);
+  }
+  
+  .footer-contact > a:hover {
+    color: var(--color-purple);
+  }
+  
+  .footer-contact small {
+    color: var(--color-text-secondary);
+    font-size: var(--font-size-xs);
+    margin-top: var(--space-3);
+  }
+
   /* =========================================
      RESPONSIVE
   ========================================= */
   
   @media (max-width: 900px) {
+    .footer-content {
+        grid-template-columns: 1fr 1fr;
+      }
+      
+      .footer-contact {
+        justify-self: start;
+      }
+
     .contact-card {
         align-items: start;
         grid-template-columns: 1fr;
@@ -797,6 +873,14 @@
   }
   
   @media (max-width: 600px) {
+    .footer-content {
+        grid-template-columns: 1fr;
+      }
+      
+      .footer-contact {
+        justify-self: start;
+      }
+
     .hero-copy {
       min-height: 600px;
       padding-bottom: var(--space-6);
