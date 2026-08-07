@@ -776,7 +776,7 @@
   
     .hero-copy p {
       max-width: 540px;
-      margin-top: 22px;
+      margin-top: 18px;
       font-size: 17px;
       line-height: 1.65;
     }
@@ -784,12 +784,41 @@
     /* SERVICES */
   
     .services-grid {
-      grid-template-columns: 1fr;
+      display: flex;
+      gap: 16px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+      padding-bottom: 14px;
+      scrollbar-width: none;
+    }
+    
+    .services-grid::-webkit-scrollbar {
+      display: none;
     }
   
     .service-card {
-      min-height: auto;
-      padding: 24px 0;
+      flex: 0 0 88%;
+      min-height: 320px;
+      padding: 28px 24px;
+      background: #ffffff;
+      border: 1px solid var(--color-border);
+      border-radius: 18px;
+      box-shadow: 0 10px 30px rgba(24, 24, 27, 0.05);
+      scroll-snap-align: center;
+      position: relative;
+    }
+
+    .service-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 24px;
+      right: 24px;
+      height: 2px;
+      background: var(--color-purple);
+      border-radius: 999px;
+      opacity: 0.75;
     }
   
     .service-card + .service-card {
@@ -904,7 +933,7 @@
 
     @media (max-width: 600px) {
       .hero {
-        padding: 44px 0 54px;
+        padding: 38px 0 42px;
       }
     
       .hero-copy h1 {
@@ -1053,18 +1082,9 @@
       background: transparent;
     }
     
-    .service-card + .service-card {
-      border-top: 1px solid var(--color-border);
-    }
-    
     .service-icon {
-      width: auto;
-      height: auto;
-      margin-bottom: 22px;
-      background: transparent;
-      border: 0;
-      border-radius: 0;
-      font-size: 18px;
+      color: var(--color-purple);
+      margin-bottom: 20px;
     }
     
     .service-card h3 {
@@ -1081,5 +1101,63 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
+    }
+  }
+  @media (max-width: 600px) {
+    .services {
+      overflow: hidden;
+    }
+  
+    .services-grid {
+      display: flex !important;
+      flex-direction: row !important;
+      flex-wrap: nowrap !important;
+      gap: 14px;
+      overflow-x: auto;
+      overflow-y: hidden;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+      -webkit-overflow-scrolling: touch;
+      padding: 4px 20px 20px 0;
+      scrollbar-width: none;
+    }
+  
+    .services-grid::-webkit-scrollbar {
+      display: none;
+    }
+  
+    .service-card {
+      flex: 0 0 86% !important;
+      width: 86% !important;
+      min-width: 86% !important;
+      min-height: 300px;
+      padding: 28px 24px;
+      background: #ffffff;
+      border: 1px solid var(--color-border) !important;
+      border-radius: 18px;
+      box-shadow: 0 12px 30px rgba(24, 24, 27, 0.06);
+      scroll-snap-align: start;
+      scroll-snap-stop: always;
+      position: relative;
+    }
+  
+    .service-card + .service-card {
+      border-top: 1px solid var(--color-border) !important;
+    }
+  
+    .service-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 24px;
+      width: 52px;
+      height: 2px;
+      background: var(--color-purple);
+      border-radius: 999px;
+    }
+  
+    .service-icon {
+      color: var(--color-purple);
+      margin-bottom: 22px;
     }
   }
