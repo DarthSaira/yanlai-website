@@ -415,6 +415,10 @@
 ========================================= */
 
 .workshop {
+  padding: 72px 0;
+}
+
+.workshop {
   background: var(--color-background);
   color: var(--color-text);
   padding: var(--space-8) 0;
@@ -424,11 +428,11 @@
   align-items: center;
   display: grid;
   gap: var(--space-7);
-  grid-template-columns: 0.78fr 1.22fr;
+  grid-template-columns: 0.7fr 1.3fr;
 }
 
 .workshop-copy {
-  max-width: 520px;
+  max-width: 470px;
 }
 
 .workshop-copy .eyebrow {
@@ -436,10 +440,10 @@
 }
 
 .workshop-copy h2 {
-  font-size: clamp(2.9rem, 5vw, 5.2rem);
+  font-size: clamp(2.6rem, 10vw, 4rem);
   font-weight: 500;
   letter-spacing: -0.06em;
-  line-height: 0.95;
+  line-height: 0.98;
   margin-top: var(--space-3);
 }
 
@@ -451,8 +455,8 @@
 
 .workshop-copy > p {
   color: var(--color-text-secondary);
-  font-size: var(--font-size-base);
-  line-height: 1.75;
+  font-size: 16px;
+  line-height: 1.7;
   margin-top: var(--space-4);
   max-width: 450px;
 }
@@ -474,7 +478,8 @@
 }
 
 .workshop-preview {
-  min-width: 0;
+  min-width: 100;
+  overflow: hidden;
   position: relative;
 }
 
@@ -710,77 +715,155 @@
   ========================================= */
   
   @media (max-width: 900px) {
-    .footer-content {
-        grid-template-columns: 1fr 1fr;
-      }
-      
-      .footer-contact {
-        justify-self: start;
-      }
-
-    .contact-card {
-        align-items: start;
-        grid-template-columns: 1fr;
-      }
-      
-      .contact-action {
-        justify-self: start;
-      }
-
-    .about-grid {
-        grid-template-columns: 1fr;
-      }
-      
-      .about-copy {
-        max-width: 680px;
-        padding-top: 0;
-      }
-
-    .workshop-grid {
-        grid-template-columns: 1fr;
-      }
-      
-      .workshop-copy {
-        max-width: 650px;
-      }
-      
-      .dashboard {
-        transform: none;
-      }
-
-    .services-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .hero-grid {
-        min-height: calc(100vh - 78px);
-        display: flex;
-        align-items: center;
-      }
+    /* HEADER / HERO */
   
-      .hero-copy {
-        max-width: 760px;
-        padding: var(--space-7) 0;
-      }
-  
-    .dashboard {
-      grid-template-columns: 1fr;
-      min-height: auto;
+    .hero {
+      padding: 54px 0 44px;
     }
   
-    .dashboard-sidebar {
+    .hero-grid {
+      min-height: auto;
+      display: flex;
+      align-items: center;
+    }
+  
+    .hero-copy {
+      max-width: 100%;
+      padding: 0;
+    }
+  
+    .hero-copy h1 {
+      max-width: 650px;
+      font-size: clamp(3rem, 10vw, 4.8rem);
+      line-height: 0.96;
+      letter-spacing: -0.055em;
+    }
+  
+    .hero-copy p {
+      max-width: 540px;
+      margin-top: 22px;
+      font-size: 17px;
+      line-height: 1.65;
+    }
+  
+    /* SERVICES */
+  
+    .services-grid {
+      grid-template-columns: 1fr;
+    }
+  
+    .service-card {
+      min-height: auto;
+      padding: 30px 0;
+    }
+  
+    .service-card + .service-card {
+      border-left: 0;
+      border-top: 1px solid var(--color-border);
+    }
+  
+    /* WORKSHOP */
+  
+    .workshop-grid {
+      grid-template-columns: 1fr;
+      gap: 36px;
+    }
+  
+    .workshop-copy {
+      max-width: 100%;
+    }
+  
+    .workshop-image {
+      width: 100%;
+    }
+  
+    /* ABOUT */
+  
+    .about-grid {
+      grid-template-columns: 1fr;
+    }
+  
+    .about-copy {
+      max-width: 680px;
+      padding-top: 0;
+    }
+  
+    /* CONTACT */
+  
+    .contact-card {
+      align-items: start;
+      grid-template-columns: 1fr;
+      border-radius: var(--radius-md);
+    }
+  
+    .contact-action {
+      justify-self: start;
+    }
+  
+    /* FOOTER */
+  
+    .footer-content {
+      grid-template-columns: 1fr 1fr;
+    }
+  
+    .footer-contact {
+      justify-self: start;
+    }
+
+    .main-navigation {
       display: none;
     }
-  
-    .dashboard-actions {
-      grid-template-columns: 1fr;
+
+    .main-navigation.is-open {
+      display: flex;
+      position: absolute;
+      top: 78px;
+      left: 0;
+      right: 0;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 0;
+      padding: 12px var(--page-padding) 24px;
+      background: var(--color-background);
+      border-bottom: 1px solid var(--color-border);
+      box-shadow: 0 18px 35px rgba(22, 21, 24, 0.08);
     }
-  
-    .dashboard-actions article {
-      min-height: 105px;
+    
+    .main-navigation.is-open > a:not(.button) {
+      padding: 17px 0;
+      border-bottom: 1px solid var(--color-border);
+      font-size: 15px;
     }
-  
-    .contact-card {
-      border-radius: var(--radius-md);
+    
+    .main-navigation.is-open .nav-button {
+      margin-top: 18px;
+      width: 100%;
+    }
+    
+    .menu-button {
+      display: block;
+      font-size: 0;
+      width: 44px;
+      height: 44px;
+      position: relative;
+    }
+    
+    .menu-button::before,
+    .menu-button::after {
+      content: "";
+      position: absolute;
+      left: 10px;
+      right: 10px;
+      height: 2px;
+      background: var(--color-text);
+      transition: transform 180ms ease, top 180ms ease;
+    }
+    
+    .menu-button::before {
+      top: 15px;
+    }
+    
+    .menu-button::after {
+      top: 27px;
     }
   }
