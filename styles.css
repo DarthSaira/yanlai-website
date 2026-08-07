@@ -924,6 +924,59 @@
       .workshop-grid {
         gap: 30px;
       }
+
+      .workshop {
+        padding: 68px 0;
+      }
+      
+      .workshop-grid {
+        gap: 34px;
+      }
+      
+      .workshop-copy h2 {
+        font-size: clamp(2.6rem, 11vw, 3.8rem);
+        line-height: 0.98;
+      }
+      
+      .workshop-copy h2 span {
+        margin-top: 12px;
+      }
+      
+      .workshop-copy > p {
+        font-size: 16px;
+        line-height: 1.65;
+      }
+      
+      .workshop-link {
+        margin-top: 24px;
+      }
+      
+      .workshop-preview {
+        margin-top: 4px;
+      }
+      
+      .workshop-image {
+        width: 100%;
+        border-radius: 14px;
+      }
+
+      .workshop-dots {
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+        margin-top: 18px;
+      }
+      
+      .workshop-dots span {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: #d4d4d8;
+      }
+      
+      .workshop-dots .active {
+        background: var(--color-purple);
+      }
     
       .footer-content {
         grid-template-columns: 1fr;
@@ -976,5 +1029,57 @@
     .reveal-right.is-visible {
       opacity: 1;
       transform: translateX(0);
+    }
+
+    .services-heading {
+      margin-bottom: 28px;
+    }
+    
+    .services-heading h2 {
+      font-size: clamp(2.2rem, 10vw, 3.3rem);
+      line-height: 1;
+    }
+    
+    .services-grid {
+      display: block;
+    }
+    
+    .service-card {
+      min-height: auto;
+      padding: 30px 0;
+      border: 0;
+      border-radius: 0;
+      box-shadow: none;
+      background: transparent;
+    }
+    
+    .service-card + .service-card {
+      border-top: 1px solid var(--color-border);
+    }
+    
+    .service-icon {
+      width: auto;
+      height: auto;
+      margin-bottom: 22px;
+      background: transparent;
+      border: 0;
+      border-radius: 0;
+      font-size: 18px;
+    }
+    
+    .service-card h3 {
+      font-size: 1.55rem;
+      margin-bottom: 12px;
+    }
+    
+    .service-card p {
+      max-width: 340px;
+      margin-bottom: 22px;
+    }
+    
+    .service-card > a {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
     }
   }
