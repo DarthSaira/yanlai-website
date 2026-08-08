@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1634 233" role="img" aria-labelledby="yanlai-title yanlai-desc">
+  <title id="yanlai-title">Yanlai</title>
+  <desc id="yanlai-desc">Yanlai wordmark in a deep violet gradient, with a bright triangular accent in the first A.</desc>
+
+  <defs>
+    <linearGradient id="yanlai-letter-gradient" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#311181"/>
+      <stop offset="0.52" stop-color="#22066d"/>
+      <stop offset="1" stop-color="#17005b"/>
+    </linearGradient>
+
+    <linearGradient id="yanlai-accent-gradient" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#6840ff"/>
+      <stop offset="0.58" stop-color="#8d31ff"/>
+      <stop offset="1" stop-color="#a82cff"/>
+    </linearGradient>
+  </defs>
+
+  <g id="yanlai-wordmark" fill="url(#yanlai-letter-gradient)">
+    <path id="letter-y" d="M24 24H69L147 114L226 24H269L164 140V208H129V140Z"/>
+
+    <path id="letter-a-primary" fill-rule="evenodd" d="M405 24H440L544 208H505L423 60L339 208H299ZM388 208H455L421 160Z"/>
+
+    <path id="letter-n" d="M633 24H669L830 169V24H865V208H830L668 64V208H633Z"/>
+
+    <path id="letter-l" d="M976 24H1011V174H1165V208H976Z"/>
+
+    <path id="letter-a-secondary" d="M1339 24H1375L1480 208H1440L1357 60L1274 208H1235Z"/>
+
+    <path id="letter-i" d="M1575 24H1610V208H1575Z"/>
+  </g>
+
+  <path id="yanlai-a-accent" d="M421 160L455 208H388Z" fill="url(#yanlai-accent-gradient)"/>
+</svg>

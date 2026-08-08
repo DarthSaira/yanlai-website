@@ -20,14 +20,27 @@
   </head>
 
   <body>
+    <div class="brand-intro" hidden aria-hidden="true">
+      <svg
+        class="brand-intro-canvas"
+        viewBox="0 0 100 100"
+        preserveAspectRatio="none"
+      >
+        <path class="brand-intro-trail" d="" />
+      </svg>
+  
+      <span class="brand-intro-spark"></span>
+    </div>
+  
     <header class="site-header">
       <div class="container header-inner">
         <a class="brand" href="#top" aria-label="Yanlai home">
           <img
-            class="brand-logo"
-            src="assets/images/yanlai-logo.png"
-            alt="Yanlai"
-          />
+  class="brand-logo"
+  id="brandLogo"
+  src="assets/images/yanlai-logo.svg"
+  alt="Yanlai"
+/>
         </a>
 
         <button
@@ -59,7 +72,10 @@
 <section class="hero">
   <div class="container hero-grid">
     <div class="hero-copy reveal">
-      <h1>Software that simply works.</h1>
+      <h1>
+  Software that
+  <span id="heroPhrase">simply works.</span>
+</h1>
 
       <div class="hero-line" aria-hidden="true"></div>
 
@@ -134,8 +150,14 @@
               </a>
             </article>
             
-            </article>
           </div>
+          
+          <div class="services-dots" aria-label="Choose service">
+            <button class="active" type="button" aria-label="Websites"></button>
+            <button type="button" aria-label="Automation"></button>
+            <button type="button" aria-label="Yanlai Workshop"></button>
+          </div>
+
         </div>
       </section>
 
@@ -169,14 +191,8 @@
               src="assets/images/workshop-home-en.png"
               alt="Yanlai Workshop home screen showing Reception, Payment and Management modules"
             />
-
-            <div class="workshop-dots" aria-hidden="true">
-              <span class="active"></span>
-              <span></span>
-              <span></span>
-            </div>
           </div>
-      
+    
         </div>
       </section>
 
@@ -250,8 +266,14 @@
     <footer class="site-footer reveal">
       <div class="container footer-content">
         <div class="footer-brand">
-          <h3>YANLAI</h3>
-
+          <a href="#top" aria-label="Yanlai home">
+            <img
+              class="footer-logo"
+              src="assets/images/yanlai-logo.svg"
+              alt="Yanlai"
+            />
+          </a>
+        
           <p>
             Software that simply works.
           </p>
