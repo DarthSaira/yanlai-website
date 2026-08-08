@@ -112,8 +112,8 @@ function buildBrandIntroPath() {
   const phraseEndX = phraseRect.right;
   const phraseEndY = phraseRect.bottom + 8;
 
-  const logoEndX = logoRect.left + logoRect.width * 0.16;
-  const logoEndY = logoRect.top + logoRect.height * 0.32;
+  const logoEndX = logoRect.left + logoRect.width * 0.258;
+  const logoEndY = logoRect.top + logoRect.height * 0.824;
 
   const curveX = phraseEndX + 90;
   const curveY = Math.max(logoEndY + 70, phraseEndY - 80);
@@ -186,32 +186,59 @@ function playBrandIntro() {
   requestAnimationFrame(moveSpark);
 
   trailAnimation.finished.then(() => {
-    brandLogo.animate(
+    const trailFade = brandIntroTrail.animate(
       [
-        { filter: "brightness(1)" },
-        {
-          filter:
-            "brightness(1.18) drop-shadow(0 0 8px rgba(109, 40, 217, 0.45))"
-        },
-        { filter: "brightness(1)" }
-      ],
-      {
-        duration: 650,
-        easing: "ease-out"
-      }
-    );
-
-    brandIntro.animate(
-      [
-        { opacity: 1 },
+        { opacity: 0.65 },
         { opacity: 0 }
       ],
       {
-        duration: 450,
-        delay: 180,
+        duration: 1200,
+        easing: "ease-out",
         fill: "forwards"
       }
-    ).finished.then(() => {
+    );
+  
+    const sparkLanding = spark.animate(
+      [
+  {
+    offset: 0,
+    transform: "translate(-50%, -50%) scale(1)",
+    borderRadius: "50%",
+    clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
+    opacity: 1
+  },
+  {
+    offset: 0.35,
+    transform: "translate(-50%, -50%) scale(1.15)",
+    borderRadius: "45%",
+    clipPath: "polygon(15% 10%, 85% 10%, 95% 90%, 5% 90%)",
+    opacity: 1
+  },
+  {
+    offset: 0.75,
+    transform: "translate(-50%, -50%) scale(1.3)",
+    borderRadius: "8%",
+    clipPath: "polygon(50% 0, 100% 100%, 0 100%)",
+    opacity: 1,
+    boxShadow:
+      "0 0 12px rgba(109, 40, 217, 0.9), 0 0 24px rgba(109, 40, 217, 0.55)"
+  },
+  {
+    offset: 1,
+    transform: "translate(-50%, -50%) scale(0.65)",
+    borderRadius: "0",
+    clipPath: "polygon(50% 0, 100% 100%, 0 100%)",
+    opacity: 0
+  }
+],
+      {
+        duration: 1100,
+        easing: "cubic-bezier(0.22, 1, 0.36, 1)",
+        fill: "forwards"
+      }
+    );
+  
+    Promise.all([trailFade.finished, sparkLanding.finished]).then(() => {
       brandIntro.hidden = true;
     });
   });
